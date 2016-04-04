@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Dodawanie pracownika</title>
+            </f:facet>
+        </h:head>
+        
+        <h:body>
+            <div><p:outputLabel>Dodaj nowego pracownika</p:outputLabel></div>
+            <h:form>
+                <div>
+                    <p:outputLabel value="Imie :"/>
+                    <p:inputText value="#{AddPracownik.imieNewP}"/>
+                </div>
+                <div>
+                    <p:outputLabel value="Nazwisko :"/>
+                    <p:inputText value="#{AddPracownik.nazwiskoNewP}"/>
+                </div>
+                <div>
+                    <p:commandButton value="Dodaj" action="#{AddPracownik.addNewPracownik}"/>
+                </div>
+                <div>
+                    <p:commandButton value="Lista pracownikow" action="lprac"/>
+                </div>
+            </h:form>    
+        </h:body>
+    </f:view>
+</html>

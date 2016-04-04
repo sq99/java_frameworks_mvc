@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Lista pracownikow</title>
+            </f:facet>
+        </h:head>
+        
+        <h:body>
+            <p:panel header="Pracownicy">
+                <h:form id="fPrac">
+                    <p:dataTable id="tabela" value="#{Controler1.zatrudnieni}" var="Pracownik">
+                    
+                        <p:column>
+                            <f:facet name="header"><h:outputLabel value="Id"/></f:facet>
+                            <h:outputText value="#{Pracownik.id}"/>
+                        </p:column>
+                    
+                        <p:column>
+                            <f:facet name="header"><h:outputLabel value="Imie"/></f:facet>
+                            <h:outputText value="#{Pracownik.imie}"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header"><h:outputLabel value="Nazwisko"/></f:facet>
+                            <h:outputText value="#{Pracownik.nazwisko}"/>
+                        </p:column>
+                        
+                        <p:column>
+                            <f:facet name="header"><h:outputLabel value="Przedmioty pracownika"/></f:facet>
+                            <p:button value="Wyswietl" outcome="lprzedmprac">
+                                <f:param name="pracid" value ="#{Pracownik.id}"/></p:button>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header"><h:outputLabel value="Dodaj przedmiot pracownikowi"/></f:facet>
+                            
+                            <p:button value="Dodaj" outcome="lprzedmbezwlasc">
+                                <f:param name="pracid" value ="#{Pracownik.id}"/></p:button>
+                        </p:column>
+                        
+                        <p:column>
+                            <f:facet name="header"><h:outputLabel value="Usun pracownika"/></f:facet>
+                            <p:commandButton value="Usun" action="#{DeletePracownik.delPracownik(Pracownik)}" update="@form"/>
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </p:panel>
+        </h:body>
+    </f:view>
+</html>
