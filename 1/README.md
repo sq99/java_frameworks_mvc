@@ -1,3 +1,3 @@
 # java_frameworks_mvc
 
-[Java] System zarz¹dzania pracownikami wykorzystuj¹cy JPA, JSF i EJB oparty o architekturê MVC z wykorzystaniem mapowania obiektowo - relacyjnego
+[Java] System zarzadzania pracownikami wykorzystujacy JPA, JSF i EJB oparty o architekture MVC z wykorzystaniem mapowania obiektowo - relacyjnego
